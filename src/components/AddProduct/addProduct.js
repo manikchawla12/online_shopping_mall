@@ -1,6 +1,8 @@
+import axios from "axios";
 import { Fragment, useEffect, useState } from "react";
 
 const AddProduct = () => {
+  
   const [data, setData] = useState({
     productName: "",
     productPrice: "",
@@ -35,27 +37,33 @@ const AddProduct = () => {
     e.preventDefault();
     setError(validateValues(data));
     console.log(error);
+    if(error){
+      setSubmitting(false);
+    }
+    else{
+      axios.post("http://localhost:3000/product",data).then((res) => {
+      setData(res.data);
+    });
     setSubmitting(true);
+    }
   };
 
-  const finalSubmit = () => {
-    console.log(data);
-    
-  };
+
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && submitting) {
-      finalSubmit();
+      handleSubmit() 
+       
     }
   }, [error]);
 
-  return (
+  return (  
     <Fragment>
       <div className="d-flex mb-2">
         <div className="container">
           <h3 className="mt-5">Add Product</h3>
           {Object.keys(error).length === 0 && submitting ? (
-            <span className="success">Successfully submitted ✓</span>
+            <span className="text-success">Successfully submitted ✓</span>
           ) : null}
           <hr />
           <form className="row" onSubmit={handleSubmit}>
@@ -117,7 +125,7 @@ const AddProduct = () => {
               ) : null}
             </div>{" "}
             <div className="form-group p-2">
-              <button className="btn btn-success" type="submit">
+              <button className="btn btn-success" type="submit" disabled={submitting}>
                 Submit
               </button>
               &nbsp;
@@ -127,6 +135,7 @@ const AddProduct = () => {
             </div>
           </form>
         </div>
+        
       </div>
     </Fragment>
   );

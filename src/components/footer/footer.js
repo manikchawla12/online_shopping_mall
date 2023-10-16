@@ -5,7 +5,7 @@ function Footer() {
     <Fragment>
       <div className=" mt-5">
         <footer className="text-center text-white bg-dark">
-          <div className="container">
+          <div className="container ">
             <section className="mt-5">
               <div className="row text-center d-flex justify-content-center pt-5">
                 <div className="col-md-2">
