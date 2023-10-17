@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import "./navbar.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -43,7 +44,7 @@ function Navbar() {
     <div className="collapse navbar-collapse d-flex  flex-row-reverse"  id="navbarNav">
       <ul className="navbar-nav me-2">
         <li className="nav-item">
-          <a className="nav-link hover-effect" href="#">Home</a>
+          <Link to= "/" className="nav-link hover-effect">Home</Link>
         </li>
         <li className="nav-item ">
           <a className="nav-link hover-effect" href="#">About Us</a>
