@@ -16,16 +16,16 @@ function Navbar() {
                     <div>
                         <ul className=" list-group list-group-horizontal ">
                             <li className="list-group-item border-0">
-                                <a href="*" className="text-decoration-none text-dark">
+                                <Link to="/login" className="text-decoration-none text-dark">
                                 <i className="fa fa-male me-2"></i>
                                 <span>Login</span>
-                                </a>
+                                </Link>
                             </li>
                             <li className="list-group-item border-0">
-                            <a href="*" className="text-decoration-none text-dark">
+                            <Link to="/register" className="text-decoration-none text-dark">
                                 <i className="fa fa-male me-2"></i>
                                 <span>Register</span>
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -50,7 +50,7 @@ function Navbar() {
           <a className="nav-link hover-effect" href="#">About Us</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link hover-effect" href="#">Products</a>
+        <Link to= "/product" className="nav-link hover-effect">Products</Link>
         </li>
         <li className="nav-item">
           <a className="nav-link hover-effect" href="#">Shop</a>
