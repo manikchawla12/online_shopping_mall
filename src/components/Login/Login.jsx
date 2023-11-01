@@ -55,13 +55,17 @@ export default function Login() {
                 password: password
             }
             let loginData = await APIServices.login(data)
+            
             if(loginData.data.length<1){
                 console.log("Wrong email or password");
                 navigate('/login')
             } else {
+                
                 let data = { email: loginData.data[0].email,
                             userName: loginData.data[0].userName,
                             id: loginData.data[0].id,
+                            name:loginData.data[0].name,
+                            address:loginData.data[0].address,
                             isLoggedIn: true,
                             role: loginData.data[0].role }
                             console.log(data);

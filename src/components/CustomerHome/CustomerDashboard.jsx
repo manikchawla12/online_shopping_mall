@@ -44,13 +44,13 @@ export default function CustomerDashboard() {
                       </li>
                       <li className=" text-start navHover ">
                     <Link
-                      to="/admin/showProduct"
+                      to="/product"
                       data-bs-toggle="collapse"
                       className="nav-link px-0 align-middle"
                     >
                       <i className="fs-4 bi-speedometer2"></i>{" "}
                       <span className="ms-1 d-none d-sm-inline text-light  ">
-                        Show Products
+                       Products
                       </span>{" "}
                     </Link>
                       </li>
@@ -81,7 +81,7 @@ export default function CustomerDashboard() {
             <div className="col p-0" style={{backgroundColor: 'rgb(228, 228, 228)'}}>
             <nav className="navbar navbar-light bg-light">
               <div className="container-fluid">
-                <Link className="navbar-brand" style={{fontWeight: '500'}} to="/admin/">Admin Dashboard</Link>
+                <Link className="navbar-brand" style={{fontWeight: '500'}} to="/customer/">Customer Dashboard</Link>
                 <Link className="link text-dark">Logout</Link>
               </div>
             </nav>

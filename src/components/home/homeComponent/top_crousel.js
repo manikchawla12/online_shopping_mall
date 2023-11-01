@@ -28,7 +28,7 @@ export const Top_crousel = () => {
       </div>
 
       <button
-        onClick={() => Navigate("product-listing")}
+        onClick={() => Navigate("/product")}
         className="shop-now-btn"
       >
         Shop Now

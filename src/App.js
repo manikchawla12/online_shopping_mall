@@ -46,8 +46,10 @@ function App() {
 
             {/* Customer pages */}
             <Route element={<RequireAuth allowedRoles={["customer"]} />}>
-              <Route path="/customer/" element={<CustomerDashboard />} />
-              <Route path="/customer/customerProfile" element={<CustomerProfile />} />
+              <Route path="/customer/" element={<CustomerDashboard />}>
+                <Route path="/customer/customerProfile" element={<CustomerProfile />} />
+                
+                </Route>
             </Route>
 
             {/* Missing */}
